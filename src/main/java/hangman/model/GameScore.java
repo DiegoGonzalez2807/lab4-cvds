@@ -1,10 +1,10 @@
 package hangman.model;
 
-public abstract class GameScore {
+public abstract class GameScore{
     
     protected int scoreCalculated;
 
-    public int calculateScore(int correctCount, int incorrectCount){
+    public int calculateScore(int correctCount, int incorrectCount)throws scoreException{
         return scoreCalculated;
     }
 }
