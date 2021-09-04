@@ -14,20 +14,23 @@ public class OriginalScore extends GameScore {
      * @param --> (int) correctCount, (int) incorrectCount
      * @throws --> ScoreException
      */
-    public int calculateScore(int correctCount, int incorrectCount) throws scoreException{
-        this.scoreCalculated = 100;
 
-        //Bonificacion de letras correctas
-        //NO hay bonificacion por letras correctas
-        this.scoreCalculated = this.scoreCalculated * 1;
+     private int scoreCalculated = 100;
+
+    public int calculateScore(int correctCount, int incorrectCount) throws scoreException{
+
+        //Excepcion --> contadores de letras menores a 0
+        if(correctCount < 0 || incorrectCount <0){
+            throw new scoreException("El numero es negativo");
+        }
 
         //Letras incorrectas
         //Se penaliza con 10 puntos con cada letra incorrecta
-        this.scoreCalculated -= 10*incorrectCount;
+        scoreCalculated -= 10*incorrectCount;
 
         //Excepcion --> Score menor a 0
-        if(this.scoreCalculated < 0){
-            throw new scoreException("El score es invalido, puntaje negativo");
+        if(scoreCalculated < 0){
+            scoreCalculated = 0;
         }
         return this.scoreCalculated;
     }

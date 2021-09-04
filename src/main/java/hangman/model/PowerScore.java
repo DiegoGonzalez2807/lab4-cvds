@@ -1,8 +1,12 @@
 package hangman.model;
 
+import java.lang.Math;
+
 public class PowerScore extends GameScore{
     
     int turno = 1;
+
+    private int scoreCalculated = 0;
 
     /**
      * Función creada para calcular el score del juego de acuerdo a las
@@ -18,13 +22,13 @@ public class PowerScore extends GameScore{
      * @throws --> ScoreException
      */
     public int calculateScore(int correctCount, int incorrectCount) throws scoreException{
-        scoreCalculated = 0;
-        incorrect(incorrectCount);
         correct(correctCount);
+        incorrect(incorrectCount);
+        
 
         //El puntaje mínimo es 0
         if(scoreCalculated < 0){
-            throw new scoreException("El scores es invalido, puntaje negativo");
+            scoreCalculated = 0;
         }
         turno +=1;
 
@@ -50,6 +54,10 @@ public class PowerScore extends GameScore{
      * @param correctCount
      */
     private void correct(int correctCount){
-        scoreCalculated += 5^turno;
+        if(correctCount != 0){
+            for(int i = 1; i<= correctCount;i++){
+                scoreCalculated += Math.pow(5, i);
+            }
+        }
     }
 }

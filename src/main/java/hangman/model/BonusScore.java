@@ -1,6 +1,8 @@
 package hangman.model;
 
 public class BonusScore extends GameScore{
+
+    private int scoreCalculated = 0;
     
     /**
      * Función creada para calcular el score del juego de acuerdo a las
@@ -15,15 +17,21 @@ public class BonusScore extends GameScore{
      * @throws --> ScoreException
      */
     public int calculateScore(int correctCount, int incorrectCount) throws scoreException{
-        scoreCalculated = 0;
-        if(correctCount>0){
-            scoreCalculated += 10*correctCount;
+
+        //Error en caso que los contadores de letras sean negativos
+        if(correctCount < 0 || incorrectCount < 0){
+            throw new scoreException("El numero es negativo");
         }
-        else if(incorrectCount>0){
-            scoreCalculated -= 5*incorrectCount;
-        }
+
+        //Bonus de letras correctas
+        scoreCalculated += 10*correctCount;
+
+        //Bonus de letras incorrectas
+        scoreCalculated -= 5*incorrectCount;
+
+        //Puntaje minimo
         if(scoreCalculated < 0){
-            throw new scoreException("El scores es invalido, puntaje negativo");
+            scoreCalculated = 0;
         }
         return scoreCalculated;
     }
