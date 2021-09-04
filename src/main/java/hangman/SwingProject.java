@@ -56,7 +56,10 @@ public class SwingProject {
     //method: main
     //purpose: the entry-point to our application
     public static void main(String[] args) {
-        createGUIUsingFactoryMethod().play();
+        //createGUIUsingFactoryMethod().play();
+
+        //Cambio de creacion de GUI a partir de injection
+        createGUIUsingGuice().play();
     }
 
 }

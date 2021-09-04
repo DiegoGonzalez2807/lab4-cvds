@@ -2,9 +2,7 @@ package hangman.model;
 
 import java.lang.Math;
 
-public class PowerScore extends GameScore{
-    
-    int turno = 1;
+public class PowerScore implements GameScore{
 
     private int scoreCalculated = 0;
 
@@ -30,7 +28,6 @@ public class PowerScore extends GameScore{
         if(scoreCalculated < 0){
             scoreCalculated = 0;
         }
-        turno +=1;
 
         //Si con las reglas anteriores sobrepasa 500 puntos, el puntaje es 500.
         if(scoreCalculated > 500){
