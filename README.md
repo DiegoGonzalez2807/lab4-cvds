@@ -63,12 +63,21 @@ principio de inversión de dependencias:
 
 5. Actualice el archivo `pom.xml` e incluya las dependencias para la ultima versión de JUnit y la versión del compilador de Java a la versión 8 .
    
-
+ 
 6. Teniendo en cuenta dichas especificaciones, en la clase donde se
    implementarán las pruebas (GameScoreTest), en los
-   comentarios iniciales, especifique las clases de equivalencia para
+   comentarios iniciales, especifique las clases de equivalencia   
    las tres variantes de GameScore, e identifique
    condiciones de frontera. 
+   - Pruebas OriginalScore  
+  
+     Para el OriginalScore se tuvo, el contador de letras correctas e incorrectas fuera positivo, mayores a 0, el puntaje minimos es 0 y sin tener acierto o desacierto el puntaje es 100, como clases de equivalencia.  
+   - Pruebas PowerScore  
+  
+     Para el PowerScore se tuvo como clases de quivalencia, los contadores de letras correctas e incorrectas no pueden ser menores a 0, sin tener aciertos o desaciertos se tiene in puntaje de 0, si el puntaje es menor a cero se deja el puntaje como 0 y si el puntaje es mayor a 500 se deja como 500. Como condicion de frontera tenemos un puntaje entre 0 y 500.  
+   - Pruebas BonusScore  
+   
+     Para el BonusScore se tuvo, los contadores de letras no pueden ser menores a 0; el score inicial e inicial es 0 y si el puntaje es menor a 0 se deja el puntaje minimo, como clases de quivalencia.
 
 7. Para cada clase de equivalencia y condición de frontera, implemente
    una prueba utilizando JUnit.
@@ -139,3 +148,7 @@ Incorpore el Contenedor Liviano Guice dentro del proyecto:
 	* etc...
 * Para lo anterior, [puede basarse en el ejemplo dado como
   referencia](https://github.com/PDSW-ECI/LightweighContainers_DepenendecyInjectionIntro-WordProcessor).
+* Hangman con el esquema OriginalScore  .
+  ![](img/French_mode.jpg)
+* Hangman con el idioma francés.  
+  ![](img/OriginalScore.jpg)
