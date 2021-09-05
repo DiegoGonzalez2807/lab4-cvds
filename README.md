@@ -82,6 +82,9 @@ principio de inversión de dependencias:
 9. Realice la implementación de los 'cascarones' realizados anteriormente.
    Asegúrese que todas las pruebas unitarias creadas en los puntos anteriores
    se ejecutan satisfactoriamente.
+   
+   ![Test ahorcado](https://github.com/DiegoGonzalez2807/lab4-cvds/blob/d8b120a28d7306c1bf7a7ce2179ea4e6a570f0d0/img/Test%20ahorcado.jpg)
+   	
 
 10. Al finalizar haga un nuevo commit:
 
@@ -113,6 +116,13 @@ En este taller se va a utilizar un contenedor liviano ([GoogleGuice](https://git
 Incorpore el Contenedor Liviano Guice dentro del proyecto:
 
 * Revise las dependencias necesarias en el pom.xml.
+``` 
+ <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>5.0.1</version>
+ </dependency>
+```
 * Modifique la inyección de dependencias utilizando guice en lugar del
   método fábrica..
 * Configure la aplicación de manera que desde el programa SwingProject
